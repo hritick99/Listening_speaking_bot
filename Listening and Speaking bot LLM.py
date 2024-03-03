@@ -6,8 +6,8 @@
 
 import os;
 
-os.environ['OPENAI_API_KEY']='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'
-os.environ['SERPAPI_API_KEY']='05f68f715ba6b389889cb88c5b0132e5f5cc8a345111d7d40c6b3cbb754a0984'
+os.environ['OPENAI_API_KEY']='Add your openAI API key'
+os.environ['SERPAPI_API_KEY']='Add your SerpAPI Key '
 
 
 # In[3]:
