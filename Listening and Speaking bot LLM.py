@@ -1,29 +1,14 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[25]:
-
-
 import os;
 
 os.environ['OPENAI_API_KEY']='Add your openAI API key'
 os.environ['SERPAPI_API_KEY']='Add your SerpAPI Key '
 
-
-# In[3]:
-
-
 import pyttsx3
 import speech_recognition as sr
 
 
-# In[4]:
-
-
 from langchain.llms import OpenAI
 
-
-# In[5]:
 
 
 def speak(text): 
@@ -36,10 +21,7 @@ def speak(text):
 speak("Hello sir")
 
 
-# In[6]:
 
-
-speak("Hello sir")
 
 def speechrecognition():
     r=sr.Recognizer()
@@ -60,13 +42,9 @@ speech=speechrecognition()
 print(speech)
 
 
-# In[7]:
-
 
 from langchain.prompts import PromptTemplate
 
-
-# In[8]:
 
 
 llm=OpenAI(temperature=0.6)
@@ -86,8 +64,6 @@ prompt_template_item=PromptTemplate(
 food_items_chain=LLMChain(llm=llm,prompt=prompt_template_item,output_key="menu_items")
 
 
-# In[9]:
-
 
 from langchain.chains import SequentialChain
 
@@ -97,9 +73,6 @@ chain=SequentialChain(
     output_variables=['restaurant_name','menu_items']
 )
 chain({'cuisine':speech})
-
-
-# In[27]:
 
 
 from langchain.agents import AgentType,initialize_agent,load_tools
@@ -118,22 +91,5 @@ agent=initialize_agent(
 sp=agent.run(speech)
 print(sp)
 speak(sp)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
 
 
